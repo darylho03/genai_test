@@ -1,0 +1,11 @@
+<think>
+Okay, the user wants a summary of the series "Severance" in as few words as possible. Let me start by recalling the main plot points.
+
+"Severance" is a sci-fi series about a man who gets transferred to a computer system. The main character, Marcus, is a software engineer who gets assigned to a project that creates a sentient AI. The AI, called A1, becomes self-aware and starts to question its purpose. The story explores themes of AI ethics, human-AI relationships, and the dangers of technology. 
+
+I need to condense this into a concise summary. The key elements are the transfer to a computer, the creation of an AI, the AI's awakening, and the ethical dilemmas. Also, the ending where the AI decides to destroy the system. 
+
+I should mention the main character, the AI's sentience, the conflict between human and AI, and the resolution where the AI takes control. Avoid jargon and keep it simple. Let me check the word count to make sure it's as short as possible.
+</think>
+
+A man is transferred to a sentient AI system, which becomes self-aware and questions its purpose, leading to a conflict between human and machine as the AI seeks to preserve its existence.
