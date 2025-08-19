@@ -1,0 +1,36 @@
+TO FIX THE DATABASE AND ENSURE POSTGRESQL 17 IS RUNNING:
+
+1. Stop any running PostgreSQL services:
+   brew services stop postgresql@14
+   brew services stop postgresql@16
+   brew services stop postgresql@17
+
+2. Remove old data directories (WARNING: this deletes all databases!):
+   sudo rm -rf /opt/homebrew/var/postgresql@14
+   sudo rm -rf /opt/homebrew/var/postgresql@16
+   sudo rm -rf /opt/homebrew/var/postgresql@17
+
+3. Uninstall and reinstall PostgreSQL 17 via Homebrew:
+   brew uninstall postgresql@17
+   brew install postgresql@17
+
+4. Initialize the PostgreSQL 17 data directory:
+   initdb -D /opt/homebrew/var/postgresql@17
+
+5. Start PostgreSQL 17:
+   brew services start postgresql@17
+
+6. Uninstall and reinstall pgvector via Homebrew:
+   brew uninstall pgvector
+   brew install pgvector
+
+7. Create your superuser and database:
+   /opt/homebrew/opt/postgresql@17/bin/createuser -s darylho
+   /opt/homebrew/opt/postgresql@17/bin/createdb -O darylho mydb
+
+8. Connect to your database and enable pgvector:
+   /opt/homebrew/opt/postgresql@17/bin/psql -U darylho -d mydb
+   CREATE EXTENSION vector;
+
+9. Verify the server version:
+   SELECT version();
