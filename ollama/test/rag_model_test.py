@@ -10,8 +10,17 @@ import time
 import sys
 import logging
 from pythonjsonlogger import jsonlogger
+import os
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
+conn = psycopg2.connect(
+    dbname="mydb",
+    user="darylho",
+    password=os.getenv("DATABASE_PASSWORD"),
+    host="localhost",
+    port=5432
+    
+)
 register_vector(conn)
 print("Connected to PostgreSQL database.")
 

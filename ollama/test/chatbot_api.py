@@ -1,4 +1,5 @@
 import json
+import os
 from flask import Flask, jsonify, request
 import ollama
 import pdfplumber
@@ -9,8 +10,17 @@ from sklearn.metrics.pairwise import cosine_similarity
 import requests
 from bs4 import BeautifulSoup
 
+
 app = Flask(__name__)
 model = SentenceTransformer("all-MiniLM-L6-v2")
+conn = psycopg2.connect(
+    dbname="mydb",
+    user="darylho",
+    password=os.getenv("DATABASE_PASSWORD"),
+    host="localhost",
+    port=5432
+    
+)
 register_vector(conn)
 
 system_prompts = {

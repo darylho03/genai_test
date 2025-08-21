@@ -3,12 +3,20 @@ from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer
 import psycopg2
 from pgvector.psycopg2 import register_vector
+import os
 
 # visited = set()
 all_chunks = []
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
-
+conn = psycopg2.connect(
+    dbname="mydb",
+    user="darylho",
+    password=os.getenv("DATABASE_PASSWORD"),
+    host="localhost",
+    port=5432
+    
+)
 register_vector(conn)
 print("Connected to PostgreSQL database.")
 

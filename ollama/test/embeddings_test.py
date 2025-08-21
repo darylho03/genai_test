@@ -3,6 +3,7 @@ import pandas as pd
 import psycopg2
 from pgvector.psycopg2 import register_vector
 import pdfplumber
+import os
 
 content = ""
 with pdfplumber.open("ollama/test/daryl_resume.pdf") as pdf:
@@ -27,6 +28,7 @@ for i, chunk in enumerate(chunk_text_by_chars(content)):
 
 sentences = [c["text"] for c in char_chunks]
 
+conn = psycopg2.connect(dbname="mydb", user="darylho", password=os.getenv("DATABASE_PASSWORD"),)
 register_vector(conn)
 
 print("Connected to PostgreSQL database.")

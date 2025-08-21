@@ -1,7 +1,15 @@
 import csv
 import psycopg2
+import os
 
 # Connect to PostgreSQL
+conn = psycopg2.connect(
+    dbname="mydb",
+    user="darylho",
+    password=os.getenv("DATABASE_PASSWORD"),
+    host="localhost",
+    port=5432
+)
 cur = conn.cursor()
 
 # Create table if it doesn't exist

@@ -5,6 +5,7 @@ import psycopg2
 from pgvector.psycopg2 import register_vector
 import pdfplumber
 from sklearn.metrics.pairwise import cosine_similarity
+import os
 
 content = ""
 pages = []
@@ -30,6 +31,7 @@ for p in range(len(pages)):
 print(f"Total chunks created: {len(char_chunks)}")
 sentences = [c["text"] for c in char_chunks]
 
+conn = psycopg2.connect(dbname="mydb", user="darylho", password=os.getenv("DATABASE_PASSWORD"))
 register_vector(conn)
 print("Connected to PostgreSQL database.")
 
