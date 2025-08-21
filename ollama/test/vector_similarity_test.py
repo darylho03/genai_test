@@ -30,7 +30,6 @@ for p in range(len(pages)):
 print(f"Total chunks created: {len(char_chunks)}")
 sentences = [c["text"] for c in char_chunks]
 
-conn = psycopg2.connect(dbname="mydb", user="darylho", password="Mountainlake15")
 register_vector(conn)
 print("Connected to PostgreSQL database.")
 

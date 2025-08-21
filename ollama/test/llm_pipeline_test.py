@@ -2,7 +2,6 @@ import psycopg2
 import random
 import ollama
 
-conn = psycopg2.connect(dbname="mydb", user="darylho", password="Mountainlake15")
 cur = conn.cursor()
 
 cur.execute("""

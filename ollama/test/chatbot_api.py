@@ -11,14 +11,6 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 model = SentenceTransformer("all-MiniLM-L6-v2")
-conn = psycopg2.connect(
-    dbname="mydb",
-    user="darylho",
-    password="Mountainlake15",
-    host="localhost",
-    port=5432
-    
-)
 register_vector(conn)
 
 system_prompts = {

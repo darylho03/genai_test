@@ -2,13 +2,6 @@ import csv
 import psycopg2
 
 # Connect to PostgreSQL
-conn = psycopg2.connect(
-    dbname="mydb",
-    user="darylho",
-    password="Mountainlake15",
-    host="localhost",
-    port=5432
-)
 cur = conn.cursor()
 
 # Create table if it doesn't exist

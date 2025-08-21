@@ -12,14 +12,6 @@ import logging
 from pythonjsonlogger import jsonlogger
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
-conn = psycopg2.connect(
-    dbname="mydb",
-    user="darylho",
-    password="Mountainlake15",
-    host="localhost",
-    port=5432
-    
-)
 register_vector(conn)
 print("Connected to PostgreSQL database.")
 

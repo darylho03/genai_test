@@ -27,7 +27,6 @@ for i, chunk in enumerate(chunk_text_by_chars(content)):
 
 sentences = [c["text"] for c in char_chunks]
 
-conn = psycopg2.connect(dbname="mydb", user="darylho", password="Mountainlake15")
 register_vector(conn)
 
 print("Connected to PostgreSQL database.")
